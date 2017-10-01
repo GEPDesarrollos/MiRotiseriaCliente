@@ -18,9 +18,18 @@ public interface IModeloCliente {
     void agregarRestarPlato(String idPlato)throws ExcepcionRotiseria;
 
     /**
+     * metodo para obtener la cantidad de pedidos de cada plato. Pantalla1
+     */
+    void cantidadPorPlato(String idPlato)throws ExcepcionRotiseria;
+
+
+    /**
      * metodo para enviar el pedido a la base de datos
      */
     void enviarPedido(Pedido pedido)throws ExcepcionRotiseria;
+
+
+
 
     /**
      * metodo que obtiene el precio total del pedido
