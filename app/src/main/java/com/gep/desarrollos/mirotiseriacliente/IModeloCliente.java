@@ -37,4 +37,9 @@ public interface IModeloCliente {
      * metodo que obtiene el menú de platos de la Rotisería
      */
     void getMenu()throws ExcepcionRotiseria;
+
+    /**
+     * metodo para comenzar el timer
+     */
+    void comienzaTimer(int tiempo)throws ExcepcionRotiseria;
 }
