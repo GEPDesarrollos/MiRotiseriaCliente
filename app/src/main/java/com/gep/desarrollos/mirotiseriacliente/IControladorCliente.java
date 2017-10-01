@@ -44,6 +44,4 @@ public interface IControladorCliente {
     void manejadorComenzarTimer()throws ExcepcionRotiseria;
 
 
-
-
 }

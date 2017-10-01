@@ -7,12 +7,12 @@ package com.gep.desarrollos.mirotiseriacliente;
 public interface IVistaCliente {
 
     /**
-     * metodo que agrega al controlador como listener de acciones
+     * metodo que agrega al Controlador como listener de acciones
      */
      void agregaOyenteAcciones(IControladorCliente iControladorCliente) throws ExcepcionRotiseria;
 
     /**
-     * metodo para mostrar en pantalla el fragment requerido por el controlador
+     * metodo para mostrar en pantalla la pantalla requerida por el Controlador
      */
      void mostrarPantalla(Object object) throws ExcepcionRotiseria;
 
