@@ -62,4 +62,6 @@ public interface IModeloCliente {
      */
     void getDemoraPedido()throws ExcepcionRotiseria;
 
+
+
 }

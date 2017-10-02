@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Mi Rotiseria Cliente</string>
+    <string name="facebook_app_id">134980157137886</string>
+    <string name="fb_login_protocol_scheme">fb134980157137886</string>
+
 </resources>
