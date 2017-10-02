@@ -63,5 +63,9 @@ public interface IModeloCliente {
     void getDemoraPedido()throws ExcepcionRotiseria;
 
 
+    /**
+     * método para logearse usando facebook
+     */
+    void faceLogin()throws ExcepcionRotiseria;
 
 }
