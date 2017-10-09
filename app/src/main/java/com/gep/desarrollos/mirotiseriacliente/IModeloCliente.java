@@ -1,5 +1,7 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
+import java.util.Objects;
+
 /**
  * Created by guille on 01/10/2017.
  */
@@ -35,6 +37,10 @@ public interface IModeloCliente {
     //------- Metodos de servicio para la Vista ---------
 
     /**
+     * metodo que notifica cambios en el modelo
+     */
+    void disparaCambiosModelo(Object object)throws ExcepcionRotiseria;
+    /**
      * metodo que obtiene el menú de platos de la Rotisería. Pantalla1
      */
      Plato[] getMenu()throws ExcepcionRotiseria;
@@ -42,14 +48,14 @@ public interface IModeloCliente {
     /**
      * metodo para obtener la cantidad de pedidos de cada plato. Pantalla1
      */
-    void cantidadPorPlato(String idPlato)throws ExcepcionRotiseria;
+    Integer cantidadPorPlato(int idPlato)throws ExcepcionRotiseria;
 
 
     /**
      * metodo que obtiene el precio total del pedido. Barra de Pedido. Pantalla1
      * @throws ExcepcionRotiseria
      */
-    void getPrecioPedido()throws ExcepcionRotiseria;
+    int getPrecioPedido()throws ExcepcionRotiseria;
 
     /**
      * metodo que obtiene todos los datos del pedido. Pantalla2

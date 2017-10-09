@@ -23,6 +23,7 @@ public interface IVistaCliente {
 
     /**
      * metodo para mostrar en pantalla la pantalla requerida por el Controlador
+     * @param object
      */
      void mostrarPantalla(Object object) throws ExcepcionRotiseria;
 

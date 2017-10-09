@@ -2,7 +2,6 @@ package com.gep.desarrollos.mirotiseriacliente;
 
 import android.util.Log;
 
-import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -84,6 +83,11 @@ public class ImplementacionModeloCliente implements IModeloCliente {
     }
 
     @Override
+    public void disparaCambiosModelo(Object object) throws ExcepcionRotiseria {
+        iVistaCliente.mostrarPantalla(object);
+    }
+
+    @Override
     public Plato[] getMenu() throws ExcepcionRotiseria {
         menu = new Menu();
         return menu.getMenu();
@@ -91,12 +95,14 @@ public class ImplementacionModeloCliente implements IModeloCliente {
     }
 
     @Override
-    public void cantidadPorPlato(String idPlato) throws ExcepcionRotiseria {
-
+    public Integer cantidadPorPlato(int idPlato) throws ExcepcionRotiseria {
+        return (Integer)pedido.getPlatos().get(idPlato);
     }
 
+
     @Override
-    public void getPrecioPedido() throws ExcepcionRotiseria {
+    public int getPrecioPedido() throws ExcepcionRotiseria {
+        return pedido.getPrecio();
 
     }
 
