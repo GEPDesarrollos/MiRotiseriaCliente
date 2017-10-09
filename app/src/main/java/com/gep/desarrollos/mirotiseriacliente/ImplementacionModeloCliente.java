@@ -26,49 +26,65 @@ public class ImplementacionModeloCliente implements IModeloCliente {
 
         Integer cantidadPlatoPedido;
 
-        if(pedido.getPlatos()!=null) {
-            cantidadPlatoPedido = (pedido.getPlatos().get(idPlato) != null) ? (Integer) pedido.getPlatos().get(idPlato) : 0;
-        }else{
-             cantidadPlatoPedido=0;
-        }
+        //comprueba que el plato esté en el menu
+        if (menu.getPrecioPlato(idPlato) != -1) {
 
-        switch (numero){
+            if (pedido.getPlatos() != null) {
+                cantidadPlatoPedido = (pedido.getPlatos().get(idPlato) != null) ? (Integer) pedido.getPlatos().get(idPlato) : 0;
+            } else {
+                cantidadPlatoPedido = 0;
+            }
 
-            case 1:
-                if ((pedido.getPlatos()!=null)) {
-                    pedido.getPlatos().put(idPlato,cantidadPlatoPedido+numero);
-                }else{
-                    pedido.setPlatos(new TreeMap<Integer,Integer>());
-                    pedido.getPlatos().put(idPlato,numero);
-                }
-                Log.i("PEDIDO: ",""+pedido.getPlatos().toString()+" - Obj pedido: "+pedido.toString());
-                break;
+            switch (numero) {
 
-            case -1:
-                if(cantidadPlatoPedido!=0) {
-                    if (cantidadPlatoPedido == 1) pedido.getPlatos().remove(idPlato);
-                    else pedido.getPlatos().put(idPlato, cantidadPlatoPedido + numero);
+                case 1:
+                    if ((pedido.getPlatos() != null)) {
 
+                        pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
+                        pedido.getPlatos().put(idPlato, cantidadPlatoPedido + numero);
 
-                        Log.i("PEDIDO: ", "" + pedido.getPlatos().toString()+" - Obj pedido: "+pedido.toString());
-                  }else {
-                    try {
-                        Log.i("PEDIDO: ", "Error!!! no se puede pedir: "+cantidadPlatoPedido+" "+numero);
-                    } catch (Exception e) {
+                    } else {
+                        pedido.setPlatos(new TreeMap<Integer, Integer>());
+                        pedido.getPlatos().put(idPlato, numero);
+                        pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
 
                     }
-                }
-                break;
+                    Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
+                    break;
 
-            default:
-                Log.i("PEDIDO: ","Error!!!");
-                throw new ExcepcionRotiseria("no hay pedido");
+                case -1:
+                    if (cantidadPlatoPedido != 0) {
+                        if (cantidadPlatoPedido == 1) {
+                            pedido.getPlatos().remove(idPlato);
+                            pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+
+                        } else {
+                            pedido.getPlatos().put(idPlato, cantidadPlatoPedido + numero);
+                            pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+                        }
+
+                        Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
+
+                    } else {
+                        try {
+                            Log.i("PEDIDO: ", "Error!!! no se puede pedir: " + cantidadPlatoPedido + " " + numero + ". Precio pedido: " + pedido.getPrecioTotal());
+                        } catch (Exception e) {
+
+                        }
+                    }
+                    break;
+
+                default:
+                    Log.i("PEDIDO: ", "Error!!!");
+                    throw new ExcepcionRotiseria("no hay pedido");
+
+
+            }
 
 
         }
-
-
     }
+
 
 
 
@@ -102,7 +118,7 @@ public class ImplementacionModeloCliente implements IModeloCliente {
 
     @Override
     public int getPrecioPedido() throws ExcepcionRotiseria {
-        return pedido.getPrecio();
+        return pedido.getPrecioTotal();
 
     }
 

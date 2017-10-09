@@ -11,7 +11,7 @@ public class Pedido {
     private static Pedido pedido = new Pedido();
     private Cliente cliente;
     private Map  platos;
-    private int precio;
+    private int precioTotal;
     private int idPedido;
     private String hora, fecha;
 
@@ -35,12 +35,12 @@ public class Pedido {
         this.platos = platos;
     }
 
-    public int getPrecio() {
-        return precio;
+    public int getPrecioTotal() {
+        return precioTotal;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public void setPrecioTotal(int precioTotal) {
+        this.precioTotal = precioTotal;
     }
 
     public int getIdPedido() {

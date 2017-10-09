@@ -30,6 +30,7 @@ public class ImplementacionVistaCliente implements IVistaCliente {
             excepcionRotiseria.printStackTrace();
         }
     }
+
     @Override
     public void agregaOyenteAcciones(IControladorCliente iControladorCliente) throws ExcepcionRotiseria {
 

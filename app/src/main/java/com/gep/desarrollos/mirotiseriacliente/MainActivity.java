@@ -27,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
             iModeloCliente.modificaPedido(102,1);
             iModeloCliente.modificaPedido(102,1);
             iModeloCliente.modificaPedido(101,-1);
-            iModeloCliente.modificaPedido(102,-1);
-            iModeloCliente.modificaPedido(101,-1);
+            iModeloCliente.modificaPedido(204,1);
+            iModeloCliente.modificaPedido(105,1);
+            iModeloCliente.modificaPedido(205,1);
+
 
         } catch (ExcepcionRotiseria excepcionRotiseria) {
             excepcionRotiseria.printStackTrace();

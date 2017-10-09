@@ -1,19 +1,27 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
-/**
- * Created by guille on 01/10/2017.
- */
 
 public class Plato {
     private int idPlato;
+    private int precioPlato;
     private String nombre, descripcion;
     private int foto;
 
-    public Plato(int idPlato, String nombre, String descripcion, int foto) {
+
+    public Plato(int idPlato, int precioPlato, String nombre, String descripcion, int foto) {
         this.idPlato = idPlato;
+        this.precioPlato = precioPlato;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.foto = foto;
+    }
+
+    public int getPrecioPlato() {
+        return precioPlato;
+    }
+
+    public void setPrecioPlato(int precioPlato) {
+        this.precioPlato = precioPlato;
     }
 
     public int getIdPlato() {
