@@ -31,4 +31,14 @@ public class Plato {
     public int getFoto() {
         return foto;
     }
+
+    @Override
+    public String toString() {
+        return "Plato{" +
+                "idPlato=" + idPlato +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", foto=" + foto +
+                '}';
+    }
 }

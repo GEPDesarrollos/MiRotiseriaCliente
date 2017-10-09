@@ -8,11 +8,16 @@ import java.util.Map;
 
 public class Pedido {
 
+    private static Pedido pedido = new Pedido();
     private Cliente cliente;
     private Map  platos;
     private int precio;
     private int idPedido;
     private String hora, fecha;
+
+    public static Pedido getPedido(){
+        return pedido;
+    }
 
     public Cliente getCliente() {
         return cliente;

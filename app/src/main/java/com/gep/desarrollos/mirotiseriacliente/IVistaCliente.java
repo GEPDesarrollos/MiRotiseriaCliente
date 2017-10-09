@@ -7,9 +7,19 @@ package com.gep.desarrollos.mirotiseriacliente;
 public interface IVistaCliente {
 
     /**
+     * metodo que registra  al modelo
+     */
+    void registrarModelo(IModeloCliente modelo)throws ExcepcionRotiseria;
+
+    /**
      * metodo que agrega al Controlador como listener de acciones
      */
      void agregaOyenteAcciones(IControladorCliente iControladorCliente) throws ExcepcionRotiseria;
+
+    /**
+     * metodo que refresca la Pantalla
+     */
+    public void refrescar();
 
     /**
      * metodo para mostrar en pantalla la pantalla requerida por el Controlador

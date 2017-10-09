@@ -8,11 +8,9 @@
     tools:context="com.gep.desarrollos.mirotiseriacliente.MainActivity">
 
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.gep.desarrollos.mirotiseriacliente.FaceLoginFragment"
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:id="@+id/platos"/>
 
 </LinearLayout>
