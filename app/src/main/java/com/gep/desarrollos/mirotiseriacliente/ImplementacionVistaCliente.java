@@ -10,6 +10,8 @@ public class ImplementacionVistaCliente implements IVistaCliente {
     private MainActivity mainActivity;
     private IModeloCliente modelo;
     private Plato[] platos;
+    private Menu menu;
+    private final static String TAG="ImplementaciónVista";
 
 
 
@@ -38,6 +40,12 @@ public class ImplementacionVistaCliente implements IVistaCliente {
 
     @Override
     public void mostrarPantalla(Object object) throws ExcepcionRotiseria {
+
+        if(object instanceof Integer[]){
+            Integer []datosPantalla=(Integer[])object;
+
+            Log.i(TAG,datosPantalla[2]+"-id: "+datosPantalla[0]+" $"+datosPantalla[1]);
+        }
 
 
     }

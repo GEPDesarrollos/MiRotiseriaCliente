@@ -24,4 +24,12 @@ public class Menu {
         }
         return -1;
     }
+    public String getNombrePlato(int idPlato){
+        for(Plato plato:getMenu()) {
+            if (plato.getIdPlato() == idPlato)
+
+                return plato.getNombre();
+        }
+        return "error pedido";
+    }
 }

@@ -15,6 +15,7 @@ public class ImplementacionModeloCliente implements IModeloCliente {
     private Pedido pedido=Pedido.getPedido();
 
 
+
     @Override
     public void agreagarOyenteDelCambio(IVistaCliente iVistaCliente) throws ExcepcionRotiseria {
         this.iVistaCliente=iVistaCliente;
@@ -23,7 +24,8 @@ public class ImplementacionModeloCliente implements IModeloCliente {
 
     @Override
     public void modificaPedido(int idPlato, int numero) throws ExcepcionRotiseria {
-
+        Integer []idCantidadPrecio;
+        Integer precio, cantidad;
         Integer cantidadPlatoPedido;
 
         //comprueba que el plato esté en el menu
@@ -40,15 +42,21 @@ public class ImplementacionModeloCliente implements IModeloCliente {
                 case 1:
                     if ((pedido.getPlatos() != null)) {
 
-                        pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
-                        pedido.getPlatos().put(idPlato, cantidadPlatoPedido + numero);
+                        precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
+                        pedido.setPrecioTotal(precio);
+                        cantidad=Integer.valueOf(cantidadPlatoPedido + numero);
+                        pedido.getPlatos().put(idPlato,cantidad);
 
                     } else {
                         pedido.setPlatos(new TreeMap<Integer, Integer>());
                         pedido.getPlatos().put(idPlato, numero);
-                        pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
+                        precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
+                        cantidad=1;
+                        pedido.setPrecioTotal(precio);
 
                     }
+                    idCantidadPrecio=new Integer[]{idPlato,precio,cantidad};
+                    iVistaCliente.mostrarPantalla(idCantidadPrecio);
                     Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
                     break;
 
@@ -56,12 +64,18 @@ public class ImplementacionModeloCliente implements IModeloCliente {
                     if (cantidadPlatoPedido != 0) {
                         if (cantidadPlatoPedido == 1) {
                             pedido.getPlatos().remove(idPlato);
-                            pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+                            precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+                            cantidad=0;
+                            pedido.setPrecioTotal(precio);
 
                         } else {
-                            pedido.getPlatos().put(idPlato, cantidadPlatoPedido + numero);
-                            pedido.setPrecioTotal(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+                            cantidad=Integer.valueOf(cantidadPlatoPedido + numero);
+                            pedido.getPlatos().put(idPlato, cantidad);
+                            precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
+                            pedido.setPrecioTotal(precio);
                         }
+                        idCantidadPrecio=new Integer[]{idPlato,precio,cantidad};
+                        iVistaCliente.mostrarPantalla(idCantidadPrecio);
 
                         Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
 
