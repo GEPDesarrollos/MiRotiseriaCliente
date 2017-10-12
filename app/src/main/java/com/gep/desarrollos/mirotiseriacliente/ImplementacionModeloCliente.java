@@ -1,6 +1,16 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
+import android.graphics.pdf.PdfDocument;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.TreeMap;
 
@@ -9,16 +19,20 @@ import java.util.TreeMap;
  */
 
 public class ImplementacionModeloCliente implements IModeloCliente {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("pedido");
 
+
+    private MyFirebaseInstanceIDService myFirebaseInstanceIDService=new MyFirebaseInstanceIDService();
     private Menu menu;
-    private IVistaCliente iVistaCliente;
+    private IVistaCliente vistaCliente;
     private Pedido pedido=Pedido.getPedido();
 
 
 
     @Override
     public void agreagarOyenteDelCambio(IVistaCliente iVistaCliente) throws ExcepcionRotiseria {
-        this.iVistaCliente=iVistaCliente;
+        vistaCliente =iVistaCliente;
 
     }
 
@@ -32,7 +46,7 @@ public class ImplementacionModeloCliente implements IModeloCliente {
         if (menu.getPrecioPlato(idPlato) != -1) {
 
             if (pedido.getPlatos() != null) {
-                cantidadPlatoPedido = (pedido.getPlatos().get(idPlato) != null) ? (Integer) pedido.getPlatos().get(idPlato) : 0;
+                cantidadPlatoPedido = (pedido.getPlatos().get(""+idPlato) != null) ? (Integer) pedido.getPlatos().get(""+idPlato) : 0;
             } else {
                 cantidadPlatoPedido = 0;
             }
@@ -45,37 +59,37 @@ public class ImplementacionModeloCliente implements IModeloCliente {
                         precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
                         pedido.setPrecioTotal(precio);
                         cantidad=Integer.valueOf(cantidadPlatoPedido + numero);
-                        pedido.getPlatos().put(idPlato,cantidad);
+                        pedido.getPlatos().put(""+idPlato,cantidad);
 
                     } else {
-                        pedido.setPlatos(new TreeMap<Integer, Integer>());
-                        pedido.getPlatos().put(idPlato, numero);
+                        pedido.setPlatos(new TreeMap<String, Integer>());
+                        pedido.getPlatos().put(""+idPlato, numero);
                         precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato));
                         cantidad=1;
                         pedido.setPrecioTotal(precio);
 
                     }
                     idCantidadPrecio=new Integer[]{idPlato,precio,cantidad};
-                    iVistaCliente.mostrarPantalla(idCantidadPrecio);
+                    vistaCliente.mostrarPantalla(idCantidadPrecio);
                     Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
                     break;
 
                 case -1:
                     if (cantidadPlatoPedido != 0) {
                         if (cantidadPlatoPedido == 1) {
-                            pedido.getPlatos().remove(idPlato);
+                            pedido.getPlatos().remove(""+idPlato);
                             precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
                             cantidad=0;
                             pedido.setPrecioTotal(precio);
 
                         } else {
                             cantidad=Integer.valueOf(cantidadPlatoPedido + numero);
-                            pedido.getPlatos().put(idPlato, cantidad);
+                            pedido.getPlatos().put(""+idPlato, cantidad);
                             precio=Integer.valueOf(pedido.getPrecioTotal() + menu.getPrecioPlato(idPlato) * numero);
                             pedido.setPrecioTotal(precio);
                         }
                         idCantidadPrecio=new Integer[]{idPlato,precio,cantidad};
-                        iVistaCliente.mostrarPantalla(idCantidadPrecio);
+                        vistaCliente.mostrarPantalla(idCantidadPrecio);
 
                         Log.i("PEDIDO: ", "" + pedido.getPlatos().toString() + ". Precio pedido: " + pedido.getPrecioTotal());
 
@@ -99,11 +113,29 @@ public class ImplementacionModeloCliente implements IModeloCliente {
         }
     }
 
-
-
-
     @Override
-    public void enviarPedido(Pedido pedido) throws ExcepcionRotiseria {
+    public void enviarPedido(String token) throws ExcepcionRotiseria {
+
+        String tokenRotiseria;
+
+        //solicita Token de Rotisería
+        do{
+            Rotiseria.leerTokenRotiseria();
+            tokenRotiseria=Rotiseria.getTokenRotiseria();
+            Log.i("TokenRotiseriaNuevo",""+tokenRotiseria);
+        }while (tokenRotiseria==null);
+
+
+        //obtener token de la app que va a ser anexado con el pedido
+
+        pedido.setCliente(token);
+       //Log.i("tokenDevueltoCliente",pedido.getCliente());
+
+
+        //Escribir en Firebase y enviar mensaje
+
+        myRef.push().setValue(pedido);
+
 
     }
 
@@ -114,8 +146,9 @@ public class ImplementacionModeloCliente implements IModeloCliente {
 
     @Override
     public void disparaCambiosModelo(Object object) throws ExcepcionRotiseria {
-        iVistaCliente.mostrarPantalla(object);
+        vistaCliente.mostrarPantalla(object);
     }
+
 
     @Override
     public Plato[] getMenu() throws ExcepcionRotiseria {
@@ -137,7 +170,8 @@ public class ImplementacionModeloCliente implements IModeloCliente {
     }
 
     @Override
-    public void getPedido() throws ExcepcionRotiseria {
+    public Pedido getPedido() throws ExcepcionRotiseria {
+        return Pedido.getPedido();
 
     }
 

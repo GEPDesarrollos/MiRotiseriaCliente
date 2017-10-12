@@ -15,5 +15,6 @@ public class MiRotiseriaCliente extends Application{
         super.onCreate();
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
+
     }
 }

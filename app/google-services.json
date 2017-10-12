@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "339459602187",
+    "firebase_url": "https://mirotiseria.firebaseio.com",
+    "project_id": "mirotiseria",
+    "storage_bucket": "mirotiseria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339459602187:android:88c5a5a7d0e57591",
+        "android_client_info": {
+          "package_name": "com.gep.desarrollos.mirotiseriacliente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339459602187-3amfqbdi9f7e1af9a0ij21etpo8vb5ao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gep.desarrollos.mirotiseriacliente",
+            "certificate_hash": "880ebb2fe22a6b8fc32b3ac367dfbed7e69eb086"
+          }
+        },
+        {
+          "client_id": "339459602187-33j6j8esc07e69o7jdte1aovj6ektgfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrh-_3C7TzjwmFsnQAb7Gn6yFi03cm72w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339459602187-33j6j8esc07e69o7jdte1aovj6ektgfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

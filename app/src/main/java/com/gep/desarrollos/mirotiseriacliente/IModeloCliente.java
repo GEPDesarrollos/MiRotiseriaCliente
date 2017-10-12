@@ -25,7 +25,7 @@ public interface IModeloCliente {
     /**
      * metodo para enviar el pedido a la base de datos
      */
-    void enviarPedido(Pedido pedido)throws ExcepcionRotiseria;
+    void enviarPedido(String token)throws ExcepcionRotiseria;
 
 
     /**
@@ -60,7 +60,7 @@ public interface IModeloCliente {
     /**
      * metodo que obtiene todos los datos del pedido. Pantalla2
      */
-    void getPedido()throws ExcepcionRotiseria;
+    Pedido getPedido()throws ExcepcionRotiseria;
 
 
     /**

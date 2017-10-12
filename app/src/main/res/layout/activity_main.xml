@@ -13,4 +13,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/platos"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Token"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="150dp"
+        android:id="@+id/botonToken"
+        android:onClick="recibirToken"/>
+
 </LinearLayout>

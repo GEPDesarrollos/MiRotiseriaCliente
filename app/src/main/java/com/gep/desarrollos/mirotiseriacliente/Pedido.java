@@ -1,5 +1,13 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
+import android.util.Log;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Map;
 
 /**
@@ -7,24 +15,26 @@ import java.util.Map;
  */
 
 public class Pedido {
-
+    private FirebaseDatabase database=FirebaseDatabase.getInstance();
     private static Pedido pedido = new Pedido();
-    private Cliente cliente;
+    private String idCliente;
     private Map  platos;
     private int precioTotal;
     private int idPedido;
     private String hora, fecha;
 
+
+
     public static Pedido getPedido(){
         return pedido;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public String getCliente() {
+        return idCliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(String cliente) {
+        idCliente = cliente;
     }
 
     public Map getPlatos() {
