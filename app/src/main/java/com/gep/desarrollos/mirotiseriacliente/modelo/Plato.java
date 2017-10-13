@@ -8,6 +8,7 @@ public class Plato {
     private int foto;
 
 
+
     public Plato(int idPlato, int precioPlato, String nombre, String descripcion, int foto) {
         this.idPlato = idPlato;
         this.precioPlato = precioPlato;
