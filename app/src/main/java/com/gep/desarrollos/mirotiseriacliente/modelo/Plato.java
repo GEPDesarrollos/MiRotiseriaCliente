@@ -2,14 +2,14 @@ package com.gep.desarrollos.mirotiseriacliente.modelo;
 
 
 public class Plato {
-    private int idPlato;
+    private String idPlato;
     private int precioPlato;
     private String nombre, descripcion;
     private int foto;
 
 
 
-    public Plato(int idPlato, int precioPlato, String nombre, String descripcion, int foto) {
+    public Plato(String idPlato, int precioPlato, String nombre, String descripcion, int foto) {
         this.idPlato = idPlato;
         this.precioPlato = precioPlato;
         this.nombre = nombre;
@@ -25,7 +25,7 @@ public class Plato {
         this.precioPlato = precioPlato;
     }
 
-    public int getIdPlato() {
+    public String getIdPlato() {
         return idPlato;
     }
 

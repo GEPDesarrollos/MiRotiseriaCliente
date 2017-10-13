@@ -19,7 +19,7 @@ public interface IModeloCliente {
     /**
      * metodo para agregar o restar plato al pedido
      */
-    void modificaPedido(int idPlato,int numero)throws ExcepcionRotiseria;
+    void modificaPedido(String idPlato,int numero)throws ExcepcionRotiseria;
 
 
     /**
@@ -48,7 +48,7 @@ public interface IModeloCliente {
     /**
      * metodo para obtener la cantidad de pedidos de cada plato. Pantalla1
      */
-    Integer cantidadPorPlato(int idPlato)throws ExcepcionRotiseria;
+    Integer cantidadPorPlato(String idPlato)throws ExcepcionRotiseria;
 
 
     /**

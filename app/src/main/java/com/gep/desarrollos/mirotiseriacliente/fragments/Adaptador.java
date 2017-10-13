@@ -18,11 +18,27 @@ import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
  * Created by GEP on 12/10/2017.
  */
 
-class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
+class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> {
 
     private Plato[] platos;
     private IModeloCliente iModeloCliente;
 
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imagen;
+        private TextView nombre, cantidad, descripcion, precio;
+        //private Button btMas, btMenos;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            imagen = (ImageView) itemView.findViewById(R.id.imagen);
+            nombre = (TextView) itemView.findViewById(R.id.nombre_plato);
+            cantidad = (TextView) itemView.findViewById(R.id.cantidad_plato);
+            descripcion = (TextView) itemView.findViewById(R.id.descripcion_plato);
+            precio = (TextView) itemView.findViewById(R.id.precio_plato);
+            //btMas = (Button) itemView.findViewById(R.id.mas);
+            //btMenos = (Button) itemView.findViewById(R.id.menos);
+        }
+    }
 
     public Adaptador(Plato[] platos, IModeloCliente iModeloCliente) {
         this.platos = platos;
@@ -30,53 +46,36 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Adaptador.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view, parent, false);
-        return new ViewHolder(view);
+        MyViewHolder mVH=new MyViewHolder(view);
+        return mVH;
 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, int position) {
 
         holder.imagen.setImageResource(platos[position].getFoto());
         holder.nombre.setText(platos[position].getNombre());
         try {
-            holder.cantidad.setText(iModeloCliente.cantidadPorPlato(platos[position].getIdPlato()));
+            Integer cantidadPlato=(iModeloCliente.cantidadPorPlato(platos[position].getIdPlato())==null)?0:iModeloCliente.cantidadPorPlato(platos[position].getIdPlato());
+            holder.cantidad.setText(""+cantidadPlato+" u.");
         } catch (ExcepcionRotiseria excepcionRotiseria) {
             excepcionRotiseria.printStackTrace();
+        }catch (NullPointerException nullPointer){
+            nullPointer.getMessage();
         }
-        holder.cantidad.setText(platos[position].getDescripcion());
-        holder.precio.setText(platos[position].getPrecioPlato());
+        holder.descripcion.setText(platos[position].getDescripcion());
+        holder.precio.setText("$ "+platos[position].getPrecioPlato());
 
     }
+
 
     @Override
     public int getItemCount() {
-        return 0;
+        return platos.length;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        private CardView cardView;
-        private ImageView imagen;
-        private TextView nombre, cantidad, descripcion, precio;
-        private Button btMas, btMenos;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.cardView);
-            imagen = (ImageView) itemView.findViewById(R.id.imagen);
-            nombre = (TextView) itemView.findViewById(R.id.nombre_plato);
-            cantidad = (TextView) itemView.findViewById(R.id.cantidad_plato);
-            descripcion = (TextView) itemView.findViewById(R.id.descripcion_plato);
-            precio = (TextView) itemView.findViewById(R.id.precio_plato);
-            btMas = (Button) itemView.findViewById(R.id.mas);
-            btMenos = (Button) itemView.findViewById(R.id.menos);
-
-        }
-
-
-    }
-}
+   }

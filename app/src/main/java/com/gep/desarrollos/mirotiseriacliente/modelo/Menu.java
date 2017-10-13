@@ -1,32 +1,36 @@
 package com.gep.desarrollos.mirotiseriacliente.modelo;
 
-/**
- * Created by GEP on 08/10/2017.
- */
+import android.app.Application;
+
+import com.gep.desarrollos.mirotiseriacliente.MiRotiseriaCliente;
+import com.gep.desarrollos.mirotiseriacliente.R;
+
 
 public class Menu {
 
-    private Plato[] menu=new Plato[]{new Plato(101,20,"empanada de carne","empanada rellena de carne, huevo y aceitunas",1),
-            new Plato(102,20,"empanada de jamon y queso","empanada rellena de jamon y queso",2),
-            new Plato(103,20,"empanada de choclo","empanada rellena de choclo, queso, crema",3),
-            new Plato(204,80,"hamburguesa chica","hamburguesa con lechuga y tomate",4),
-            new Plato(205,150,"hamburguesa grande","hamburguesa grande con huevo, queso, lechuga y tomate",5),};
+
+
+    private Plato[] menu=new Plato[]{new Plato("101",20,"empanada de carne","empanada rellena de carne, huevo y aceitunas", (R.mipmap.empanada)),
+            new Plato("102",20,"empanada de jamon y queso","empanada rellena de jamon y queso",(R.mipmap.empanada)),
+            new Plato("103",20,"empanada de choclo","empanada rellena de choclo, queso, crema",(R.mipmap.empanada)),
+            new Plato("204",80,"hamburguesa chica","hamburguesa con lechuga y tomate",(R.mipmap.hamburguesa)),
+            new Plato("205",150,"hamburguesa grande","hamburguesa grande con huevo, queso, lechuga y tomate",(R.mipmap.hamburguesa)),};
 
     public Plato[] getMenu(){
         return menu;
     }
 
-    public int getPrecioPlato(int idPlato){
+    public int getPrecioPlato(String idPlato){
         for(Plato plato:getMenu()) {
-            if (plato.getIdPlato() == idPlato)
+            if (plato.getIdPlato().equals(idPlato))
 
                 return plato.getPrecioPlato();
         }
         return -1;
     }
-    public String getNombrePlato(int idPlato){
+    public String getNombrePlato(String idPlato){
         for(Plato plato:getMenu()) {
-            if (plato.getIdPlato() == idPlato)
+            if (plato.getIdPlato().equals(idPlato))
 
                 return plato.getNombre();
         }

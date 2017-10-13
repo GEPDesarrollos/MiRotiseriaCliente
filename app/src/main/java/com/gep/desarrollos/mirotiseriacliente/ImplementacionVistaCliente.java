@@ -14,7 +14,7 @@ import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
  */
 
 public class ImplementacionVistaCliente implements IVistaCliente {
-    private MainActivity mainActivity;
+    //private MainActivity mainActivity;
     private IModeloCliente modelo;
     private Plato[] platos;
     private Menu menu;
@@ -29,15 +29,7 @@ public class ImplementacionVistaCliente implements IVistaCliente {
 
     @Override
     public void refrescar(){
-        try {
-            platos=modelo.getMenu();
-            for (Plato plato : platos) {
-               Log.i("REFRESCAR: ",plato.toString()+"\n");
-            }
 
-        } catch (ExcepcionRotiseria excepcionRotiseria) {
-            excepcionRotiseria.printStackTrace();
-        }
     }
 
     @Override

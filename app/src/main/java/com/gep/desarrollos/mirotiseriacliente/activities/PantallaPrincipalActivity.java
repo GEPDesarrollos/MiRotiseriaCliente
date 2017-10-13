@@ -22,16 +22,24 @@ import android.widget.TextView;
 import com.gep.desarrollos.mirotiseriacliente.R;
 import com.gep.desarrollos.mirotiseriacliente.fragments.MenuFragment;
 import com.gep.desarrollos.mirotiseriacliente.fragments.PedidoFragment;
+import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.ImplementacionModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
 
 public class PantallaPrincipalActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    private IModeloCliente modeloCliente;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_principal);
+
+        modeloCliente=new ImplementacionModeloCliente();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,6 +51,8 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+
 
 
 
