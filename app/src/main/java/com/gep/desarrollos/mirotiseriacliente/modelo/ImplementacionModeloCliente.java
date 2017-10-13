@@ -1,16 +1,11 @@
-package com.gep.desarrollos.mirotiseriacliente;
+package com.gep.desarrollos.mirotiseriacliente.modelo;
 
-import android.graphics.pdf.PdfDocument;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
+import com.gep.desarrollos.mirotiseriacliente.MyFirebaseInstanceIDService;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.TreeMap;
 

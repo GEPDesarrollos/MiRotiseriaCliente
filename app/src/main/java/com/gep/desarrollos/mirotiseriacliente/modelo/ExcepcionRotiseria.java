@@ -1,4 +1,4 @@
-package com.gep.desarrollos.mirotiseriacliente;
+package com.gep.desarrollos.mirotiseriacliente.modelo;
 
 /**
  * Created by guille on 30/09/2017.

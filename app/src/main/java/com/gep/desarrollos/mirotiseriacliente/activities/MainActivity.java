@@ -1,11 +1,18 @@
-package com.gep.desarrollos.mirotiseriacliente;
+package com.gep.desarrollos.mirotiseriacliente.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
+import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.ImplementacionModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.ImplementacionVistaCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Menu;
+import com.gep.desarrollos.mirotiseriacliente.R;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Rotiseria;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 
@@ -29,18 +36,6 @@ public class MainActivity extends AppCompatActivity {
             iModeloCliente.agreagarOyenteDelCambio(iVistaCliente);
             iVistaCliente.refrescar();
 
-            iModeloCliente.modificaPedido(101,1);
-            iModeloCliente.modificaPedido(101,1);
-            iModeloCliente.modificaPedido(101,1);
-            iModeloCliente.modificaPedido(101,1);
-            iModeloCliente.modificaPedido(101,1);
-            iModeloCliente.modificaPedido(102,1);
-            iModeloCliente.modificaPedido(102,1);
-            iModeloCliente.modificaPedido(103,1);
-            iModeloCliente.modificaPedido(204,1);
-            iModeloCliente.modificaPedido(105,1);
-            iModeloCliente.modificaPedido(205,1);
-            //Log.i("tokenUsuario", firebaseInstanceId.getToken());
 
 
 

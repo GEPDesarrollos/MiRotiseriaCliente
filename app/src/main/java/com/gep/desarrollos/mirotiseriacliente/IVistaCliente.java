@@ -1,5 +1,9 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
+import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
+import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Pedido;
+
 /**
  * Created by guille on 30/09/2017.
  */

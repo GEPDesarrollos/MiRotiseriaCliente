@@ -1,4 +1,4 @@
-package com.gep.desarrollos.mirotiseriacliente;
+package com.gep.desarrollos.mirotiseriacliente.modelo;
 
 import android.util.Log;
 

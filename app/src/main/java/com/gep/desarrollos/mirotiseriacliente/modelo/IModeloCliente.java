@@ -1,6 +1,6 @@
-package com.gep.desarrollos.mirotiseriacliente;
+package com.gep.desarrollos.mirotiseriacliente.modelo;
 
-import java.util.Objects;
+import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
 
 /**
  * Created by guille on 01/10/2017.

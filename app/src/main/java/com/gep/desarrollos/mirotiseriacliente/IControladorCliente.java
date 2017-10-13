@@ -1,5 +1,7 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
+import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
+
 /**
  * Created by guille on 30/09/2017.
  */

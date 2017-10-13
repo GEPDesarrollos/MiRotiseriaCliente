@@ -2,6 +2,13 @@ package com.gep.desarrollos.mirotiseriacliente;
 
 import android.util.Log;
 
+import com.gep.desarrollos.mirotiseriacliente.activities.MainActivity;
+import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
+import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Menu;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Pedido;
+import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
+
 /**
  * Created by GEP on 08/10/2017.
  */
