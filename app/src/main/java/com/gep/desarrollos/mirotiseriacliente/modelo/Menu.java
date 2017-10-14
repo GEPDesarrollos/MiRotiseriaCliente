@@ -10,11 +10,11 @@ public class Menu {
 
 
 
-    private Plato[] menu=new Plato[]{new Plato("101",20,"empanada de carne","empanada rellena de carne, huevo y aceitunas", (R.mipmap.empanada)),
-            new Plato("102",20,"empanada de jamon y queso","empanada rellena de jamon y queso",(R.mipmap.empanada)),
-            new Plato("103",20,"empanada de choclo","empanada rellena de choclo, queso, crema",(R.mipmap.empanada)),
-            new Plato("204",80,"hamburguesa chica","hamburguesa con lechuga y tomate",(R.mipmap.hamburguesa)),
-            new Plato("205",150,"hamburguesa grande","hamburguesa grande con huevo, queso, lechuga y tomate",(R.mipmap.hamburguesa)),};
+    private Plato[] menu=new Plato[]{new Plato("101",20,"Empanada de Carne","Empanada rellena de carne, huevo y aceitunas", (R.mipmap.empanada)),
+            new Plato("102",20,"Empanada de Jamon y Queso","Empanada rellena de jamon y queso",(R.mipmap.empanada)),
+            new Plato("103",20,"Empanada de Choclo","Empanada rellena de choclo, queso, crema",(R.mipmap.empanada)),
+            new Plato("204",80,"Hamburguesa chica","Hamburguesa con lechuga y tomate",(R.mipmap.hamburguesa)),
+            new Plato("205",150,"Hamburguesa grande","Hamburguesa grande con huevo, queso, lechuga y tomate",(R.mipmap.hamburguesa)),};
 
     public Plato[] getMenu(){
         return menu;

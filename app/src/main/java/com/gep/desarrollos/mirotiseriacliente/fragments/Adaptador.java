@@ -1,6 +1,5 @@
 package com.gep.desarrollos.mirotiseriacliente.fragments;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -117,7 +116,7 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            imagen = (ImageView) itemView.findViewById(R.id.imagen);
+            imagen = (ImageView) itemView.findViewById(R.id.imagen_plato);
             id =  (TextView) itemView.findViewById(R.id.id_plato);
             nombre = (TextView) itemView.findViewById(R.id.nombre_plato);
             cantidad = (TextView) itemView.findViewById(R.id.cantidad_plato);

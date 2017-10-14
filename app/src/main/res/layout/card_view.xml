@@ -12,26 +12,11 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardBackgroundColor="#fae1e1">
+        app:cardBackgroundColor="#fcf3cf">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imagen"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp" />
-
-
-            <TextView
-                android:id="@+id/id_plato"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                 />
 
             <TextView
                 android:id="@+id/nombre_plato"
@@ -39,57 +24,83 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
-                android:layout_below="@+id/imagen" />
+                android:textStyle="bold"
+
+                android:textSize="24dp"
+                android:textColor="#000000"/>
+
+            <ImageView
+                android:id="@+id/imagen_plato"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/nombre_plato"
+                android:layout_marginLeft="5dp"
+                />
+
+
+            <TextView
+                android:id="@+id/id_plato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+
 
             <TextView
 
                 android:id="@+id/cantidad_plato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="20dp"
                 android:text="00"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/mas"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="46dp"
-                android:layout_marginRight="46dp" />
-
-            <Button
-                android:id="@+id/mas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/menos"
-                android:layout_alignStart="@+id/menos"
-                android:layout_below="@+id/menos"
-                android:layout_weight="1"
-                android:text="+" />
+                android:layout_below="@+id/mas"
+                android:layout_toLeftOf="@+id/mas"
+                android:layout_toStartOf="@+id/mas"
+                android:layout_marginRight="57dp"
+                android:layout_marginEnd="57dp" />
 
             <Button
                 android:id="@+id/menos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_weight="1"
-                android:text="-" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@mipmap/boton_eliminar"
+                android:layout_below="@+id/mas"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:id="@+id/mas"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/boton_agregar"
+                android:layout_alignTop="@+id/imagen_plato"
+                android:layout_alignLeft="@+id/menos"
+                android:layout_alignStart="@+id/menos" />
 
             <TextView
 
                 android:id="@+id/descripcion_plato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nombre_plato"
+                android:layout_below="@+id/imagen_plato"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="29dp"
-                android:layout_toEndOf="@+id/nombre_plato"
-                android:layout_toRightOf="@+id/nombre_plato" />
+                android:layout_marginBottom="30dp"
+                 />
 
             <TextView
                 android:id="@+id/precio_plato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/nombre_plato"
-                android:layout_toRightOf="@+id/nombre_plato" />
+                android:layout_marginRight="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_below="@+id/imagen_plato"
+                android:layout_alignRight="@+id/menos"
+                android:layout_alignEnd="@+id/menos"
+                android:textSize="16dp"/>
 
         </RelativeLayout>
 
