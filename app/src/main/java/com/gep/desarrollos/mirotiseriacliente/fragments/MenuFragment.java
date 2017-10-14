@@ -26,8 +26,9 @@ public class MenuFragment extends Fragment implements IVistaCliente {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private Menu menu;
+    private Plato[] platos;
     private IModeloCliente modeloCliente;
+    private IControladorCliente controladorCliente;
 
     public MenuFragment() {
 
@@ -49,19 +50,20 @@ public class MenuFragment extends Fragment implements IVistaCliente {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
 
-        // specify an adapter (see also next example)
+        // agrega la vista como oyente del modelo y llena el vector platos para el Adapter
         modeloCliente=new ImplementacionModeloCliente();
         try {
             modeloCliente.agreagarOyenteDelCambio(this);
             registrarModelo(modeloCliente);
+            platos=modeloCliente.getMenu();
+
 
         } catch (ExcepcionRotiseria excepcionRotiseria) {
             excepcionRotiseria.printStackTrace();
         }
 
-        menu=new Menu();
-        Plato[]platos;
-        platos = menu.getMenu();
+
+
         mAdapter = new Adaptador(platos,modeloCliente);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -77,6 +79,7 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
     @Override
     public void agregaOyenteAcciones(IControladorCliente iControladorCliente) throws ExcepcionRotiseria {
+        controladorCliente=iControladorCliente;
 
     }
 
