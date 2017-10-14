@@ -45,9 +45,14 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
 
     @Override
     public void mostrarPantalla(Object object) throws ExcepcionRotiseria {
-        //notifyItemChanged((Integer)object);
 
     }
+    public void mostrarPantalla(int posicion) throws ExcepcionRotiseria {
+
+        notifyItemChanged(posicion);
+
+    }
+
 
     @Override
     public void manejadorDeCambioModeloCliente(Pedido pedido) throws ExcepcionRotiseria {
@@ -78,7 +83,6 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-
         holder.imagen.setImageResource(platos[position].getFoto());
         holder.id.setText(platos[position].getIdPlato());
         holder.nombre.setText(platos[position].getNombre());
@@ -93,7 +97,7 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
         holder.descripcion.setText(platos[position].getDescripcion());
         holder.precio.setText("$ "+platos[position].getPrecioPlato());
         //botones
-        holder.setOnClickListeners(iModeloCliente);
+        holder.setOnClickListeners(iModeloCliente,holder.getAdapterPosition());
 
     }
 
@@ -104,6 +108,7 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
 
 
     public  class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private int position;
         private ImageView imagen;
         private TextView id,nombre, cantidad, descripcion, precio;
         private Button btMas, btMenos;
@@ -122,9 +127,10 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
             btMenos = (Button) itemView.findViewById(R.id.menos);
 
         }
-        void setOnClickListeners(IModeloCliente modeloCliente){
+        void setOnClickListeners(IModeloCliente modeloCliente,int position){
             btMas.setOnClickListener(this);
             btMenos.setOnClickListener(this);
+            this.position= position;
             this.modeloCliente=modeloCliente;
 
         }
@@ -135,8 +141,9 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
                 case (R.id.mas):
                     //llamar al manejador de la tecla mas
                     try {
+
                         modeloCliente.modificaPedido(id.getText().toString(),1);
-                        //mostrarPantalla((Integer)cantidad.getId());
+                        mostrarPantalla(position);
                     } catch (ExcepcionRotiseria excepcionRotiseria) {
                         excepcionRotiseria.printStackTrace();
                     }
@@ -147,6 +154,8 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
                     //llamar al manejador de la tecla menos
                     try {
                         modeloCliente.modificaPedido(id.getText().toString(),-1);
+                        mostrarPantalla(position);
+
                     } catch (ExcepcionRotiseria excepcionRotiseria) {
                         excepcionRotiseria.printStackTrace();
                     }
