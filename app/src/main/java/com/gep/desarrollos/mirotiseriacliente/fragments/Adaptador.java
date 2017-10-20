@@ -26,6 +26,12 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
     private IModeloCliente iModeloCliente;
     private IControladorCliente controladorCliente;
 
+
+    public Adaptador(Plato[] platos, IModeloCliente iModeloCliente) {
+        this.platos = platos;
+        this.iModeloCliente = iModeloCliente;
+    }
+
     @Override
     public void registrarModelo(IModeloCliente modelo) throws ExcepcionRotiseria {
         modelo=iModeloCliente;
@@ -41,11 +47,12 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
 
 
     }
-
     @Override
     public void mostrarPantalla(Object object) throws ExcepcionRotiseria {
 
     }
+
+
     public void mostrarPantalla(int posicion) throws ExcepcionRotiseria {
 
         notifyItemChanged(posicion);
@@ -58,16 +65,10 @@ class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> implements 
 
     }
 
-
-    public Adaptador(Plato[] platos, IModeloCliente iModeloCliente) {
-        this.platos = platos;
-        this.iModeloCliente = iModeloCliente;
-    }
-
     @Override
     public Adaptador.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_view, parent, false);
+                .inflate(R.layout.card_view_menu, parent, false);
         MyViewHolder mVH=new MyViewHolder(view);
         try {
             iModeloCliente.agreagarOyenteDelCambio(this);

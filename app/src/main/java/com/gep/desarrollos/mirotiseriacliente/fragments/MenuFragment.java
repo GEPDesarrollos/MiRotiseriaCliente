@@ -1,7 +1,5 @@
 package com.gep.desarrollos.mirotiseriacliente.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,7 +14,6 @@ import com.gep.desarrollos.mirotiseriacliente.R;
 import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
 import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
 import com.gep.desarrollos.mirotiseriacliente.modelo.ImplementacionModeloCliente;
-import com.gep.desarrollos.mirotiseriacliente.modelo.Menu;
 import com.gep.desarrollos.mirotiseriacliente.modelo.Pedido;
 import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
 
@@ -39,7 +36,7 @@ public class MenuFragment extends Fragment implements IVistaCliente {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler);
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_menu);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

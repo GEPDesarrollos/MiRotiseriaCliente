@@ -8,11 +8,34 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola bienvenido al Pedido"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:textSize="40dp"
+        android:text="Pedido"
+        android:id="@+id/text_pedido"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/recycler_pedido"
+        android:layout_below="@+id/text_pedido"
+        android:layout_marginTop="8dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_pedido"
+        android:id="@+id/boton_regresar"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="8dp"
+        android:text="modificar"/>
+    <Button
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/boton_regresar"
+        android:layout_toRightOf="@+id/boton_regresar"
+        android:layout_below="@+id/recycler_pedido"
+        android:text="enviar"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
