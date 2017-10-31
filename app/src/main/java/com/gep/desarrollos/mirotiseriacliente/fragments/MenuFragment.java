@@ -61,7 +61,7 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
 
 
-        mAdapter = new Adaptador(platos,modeloCliente);
+        mAdapter = new AdaptadorMenu(platos,modeloCliente);
         mRecyclerView.setAdapter(mAdapter);
 
 

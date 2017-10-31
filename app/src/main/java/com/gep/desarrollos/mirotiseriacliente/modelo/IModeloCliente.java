@@ -2,6 +2,8 @@ package com.gep.desarrollos.mirotiseriacliente.modelo;
 
 import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
 
+import java.util.Set;
+
 /**
  * Created by guille on 01/10/2017.
  */
@@ -50,6 +52,10 @@ public interface IModeloCliente {
      */
     Integer cantidadPorPlato(String idPlato)throws ExcepcionRotiseria;
 
+    /**
+     *  metodo para obtener un array de platosPedidos
+     */
+    public PlatoPedido[] getHashSetPlatoPedido();
 
     /**
      * metodo que obtiene el precio total del pedido. Barra de Pedido. Pantalla1
