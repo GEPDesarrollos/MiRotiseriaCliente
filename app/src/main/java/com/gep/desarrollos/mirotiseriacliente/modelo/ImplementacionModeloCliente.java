@@ -177,14 +177,10 @@
             @Override
             public void enviarPedido(String token) throws ExcepcionRotiseria {
 
-                String tokenRotiseria;
 
-                //solicita Token de Rotisería
-                do{
-                    Rotiseria.leerTokenRotiseria();
-                    tokenRotiseria=Rotiseria.getTokenRotiseria();
-                    Log.i("TokenRotiseriaNuevo",""+tokenRotiseria);
-                }while (tokenRotiseria==null);
+                String tokenRotiseria=Rotiseria.getTokenRotiseria();
+                Log.i("TokenRotiseriaNuevo",""+tokenRotiseria);
+
 
 
                 //obtener token de la app que va a ser anexado con el pedido
@@ -200,16 +196,22 @@
 
             }
 
+
+
             @Override
             public void comienzaTimer(int tiempo) throws ExcepcionRotiseria {
 
             }
+
+
 
             @Override
             public void agreagarOyenteDelCambio(IVistaCliente iVistaCliente) throws ExcepcionRotiseria {
                 vistaCliente.add(iVistaCliente);
 
             }
+
+
 
             @Override
             public void disparaCambiosModelo(Object object) throws ExcepcionRotiseria {
@@ -222,6 +224,7 @@
             }
 
 
+
             @Override
             public Plato[] getMenu() throws ExcepcionRotiseria {
                 menu = new Menu();
@@ -229,10 +232,13 @@
 
             }
 
+
+
             @Override
             public Integer cantidadPorPlato(String idPlato) throws ExcepcionRotiseria {
                 return (Integer)pedido.getPlatos().get(idPlato);
             }
+
 
 
             @Override
@@ -241,11 +247,15 @@
 
             }
 
+
+
             @Override
             public Pedido getPedido() throws ExcepcionRotiseria {
                 return Pedido.getPedido();
 
             }
+
+
 
             @Override
             public void getDemoraPedido() throws ExcepcionRotiseria {

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mirotiseria",
+  "private_key_id": "4d35bf1e646e283d2504d935123118b37c0d4c5c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDB9yytFzkDF7Is\nL+DX2xg/Xp6NxNEx+ddQyKDbmdVuOM24kuTxU6ipdHlnAEKKv+V4xoizie7qKq5E\nj8L7AerkDPV7do7d5yQXfVJGzjIadLkPOsyvok/HKlGz1hjkARd1rFcufsNPvyGA\ncJocoJpHdbxeVK3xUjYB8RepRtfNtkIYFzJjzLu2l6hlkjNA329w0E3o62sfCZWG\n8r8prXYhnxvvLW0vrzdlQLBRqqHIpuUO+JAf3/wOplj0LvxiTDeJm4IVPd9ugYll\nwx4xXThP2x9zmLucv52VXZyY32E6M7kDFc8xkb+WjXMCyB4drPyHtiPf1UoX84w3\nHoX8LGTJAgMBAAECggEAAjZbBJhktpPRHO7o3h1qH+Lo5Q4PIsZKPeoj541QIWM1\neXr3cIc3P8OL1PBsUd/Rcri0+3NBzdrxxOds3mcNsk8xh5h5Fa/augfcZeFZMfMN\n304Y4pHz3f4uE2KIQyV+CoIONoIMoT65V5kxMM1mJRWDMgI+P6fj5M7GqdAciwSZ\njw6BSfhrXJIxawy/7191k41DZ+qp9rNdU1/lyu0tIe6l/EXX+mmL0puGNxacwzQ5\nUkI1uo/isAasRevhetHF75nc1gswFQnO9udD7BtI+TsB8T/+GCX3tzF5GTZkJrE1\nWh3Jq7HBnBT8+2lvvgrMEAWjXj/db3UNZf9yX48muQKBgQDzRnRpAxnM7FUZMMNn\ncwYmMmT2HZY3AYCQYnxY3hnFT8aeTXaAGRNuKBuTIOaWXSkysxyiUAM8nNvWrJQe\ndEc6P53yPrSM3RzIP/NsMXCrJez5TLyqCILVSUr5U2sOoNKnyapIV+e/jpS00WXt\nNHq/zS6qW49T1/F8ObSd/QoAbQKBgQDMHHHdl5hG+wtA3hqo1GRZKkSoYq7NP3/D\npddvFqzXp0hWRik6DrkokMLiat/WDoOCluziwnd2A4/X3bo8ugxD4cadvYcNpy2d\ndS/RuPXxKUB0fYcwLqwiJEf2xYsk2aQtXgRX7/MvhPED67fByP110AlPbkZpjcEK\nqhL2NRDUTQKBgQCcDMqpfeKz77laskv19POx1suqkCoGWMFWXMZ03utbBSRb8Uad\nPviWxcWCaC1hsJq3uesZNwgMfnYKS6OrsVzrQVmYxZ5daYyH63XDJiemsWpENHQl\nAdai6CPesSLQPFtEY/kF9NVkrBo5rsSaFvrSQ9S2VIso9jEiRYXVfjZHNQKBgBrT\n6kt773H08Ue3ab2jHQVzPs77GYq0u/BVTfm1+0XlIObmFekhokiorlTgQ0d5ZOO3\nPq+Xa+hBE5kF9cKhmZcah+aX0LaEsMQvcPeZ3gmyqFwnW6uDlvBt4F+ZG27ehGvK\nHbwJN+eZC6y+QMrhxh7EF1UvY2XgUe066X8e/nVJAoGBANg3mhKY1CIJENpPnkdI\nYvxRFo6eQpOcSfj109DxnOrrPxGkS0xE9st4vD1g3Y/01ay81z2DPcDyHxhnOaN5\nAwKlvB/xsbj5BeBrehG9F7/HvBLzeEY1xGyinaxe5uoPmtw6Mw63MurnSF4gpuAo\nd5nTzEYq9JbNs5OQilTns8UH\n-----END PRIVATE KEY-----\n",
+  "client_email": "notificacion@mirotiseria.iam.gserviceaccount.com",
+  "client_id": "115104432863958413593",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/notificacion%40mirotiseria.iam.gserviceaccount.com"
+}

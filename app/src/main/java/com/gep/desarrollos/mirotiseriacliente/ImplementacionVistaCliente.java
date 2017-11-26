@@ -2,7 +2,6 @@ package com.gep.desarrollos.mirotiseriacliente;
 
 import android.util.Log;
 
-import com.gep.desarrollos.mirotiseriacliente.activities.MainActivity;
 import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
 import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
 import com.gep.desarrollos.mirotiseriacliente.modelo.Menu;
@@ -14,7 +13,7 @@ import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
  */
 
 public class ImplementacionVistaCliente implements IVistaCliente {
-    //private MainActivity mainActivity;
+    //private PantallaEspera mainActivity;
     private IModeloCliente modelo;
     private Plato[] platos;
     private Menu menu;

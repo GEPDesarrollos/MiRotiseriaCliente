@@ -46,10 +46,11 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
         View view=LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.card_view_pedido,parent,false);
         HolderView holderView=new HolderView(view);
-        Log.d("onCreateViewHolder","aca");
         return holderView;
 
     }
+
+
 
     @Override
     public void onBindViewHolder(HolderView holder, int position) {
@@ -60,7 +61,6 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
         holder.nombrePlatoPedido.setText(nombrePlatoPedido);
         String subtotal = "$ " + pedido[position].getSubTotal();
         holder.importePlatosPedidos.setText(subtotal);
-        Log.d("onBindHolderPedido",cantidades+" "+ nombrePlatoPedido +subtotal);
 
     }
 
@@ -75,8 +75,11 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
 
 
     public class HolderView extends RecyclerView.ViewHolder {
+
         //Acá se registran las views
         TextView cantidad,nombrePlatoPedido,importePlatosPedidos;
+
+
 
         public HolderView(View itemView) {
             super(itemView);
@@ -87,6 +90,11 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
         }
     }
 
+
+    /*
+    * METODOS DE LA INTERFACE IVISTA
+    *
+    * */
 
 
     @Override
@@ -106,7 +114,7 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
     @Override
     public void refrescar() {
 
-//        notifyDataSetChanged();
+
     }
 
 
@@ -122,4 +130,5 @@ class AdaptadorRecyclerPedido extends RecyclerView.Adapter<AdaptadorRecyclerPedi
     public void manejadorDeCambioModeloCliente(Pedido pedido) throws ExcepcionRotiseria {
 
     }
+
 }

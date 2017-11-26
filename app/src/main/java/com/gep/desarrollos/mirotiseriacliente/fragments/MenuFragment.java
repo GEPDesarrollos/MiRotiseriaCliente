@@ -1,16 +1,22 @@
 package com.gep.desarrollos.mirotiseriacliente.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.gep.desarrollos.mirotiseriacliente.IControladorCliente;
 import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
 import com.gep.desarrollos.mirotiseriacliente.R;
+import com.gep.desarrollos.mirotiseriacliente.activities.PantallaPrincipalActivity;
 import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
 import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
 import com.gep.desarrollos.mirotiseriacliente.modelo.ImplementacionModeloCliente;
@@ -26,6 +32,8 @@ public class MenuFragment extends Fragment implements IVistaCliente {
     private Plato[] platos;
     private IModeloCliente modeloCliente;
     private IControladorCliente controladorCliente;
+    private ImageButton botonPedido;
+    private TextView textViewTotal;
 
     public MenuFragment() {
 
@@ -61,13 +69,16 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
 
 
+
         mAdapter = new AdaptadorMenu(platos,modeloCliente);
         mRecyclerView.setAdapter(mAdapter);
 
-
+        textViewTotal=(TextView)view.findViewById(R.id.precio_total);
 
         return view;
     }
+
+
 
     @Override
     public void registrarModelo(IModeloCliente modelo) throws ExcepcionRotiseria {
@@ -82,11 +93,17 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
     @Override
     public void refrescar() {
+        try {
+            textViewTotal.setText("$ "+modeloCliente.getPedido().getPrecioTotal());
+        } catch (ExcepcionRotiseria excepcionRotiseria) {
+            excepcionRotiseria.printStackTrace();
+        }
 
     }
 
     @Override
     public void mostrarPantalla(Object object) throws ExcepcionRotiseria {
+        refrescar();
 
     }
 

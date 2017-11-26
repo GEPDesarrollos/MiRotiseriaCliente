@@ -9,11 +9,18 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Pedido"
+        android:id="@+id/text_pedido"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical"
+        android:layout_below="@+id/text_pedido"
         android:id="@+id/layout_recycler_pedido">
 
     <android.support.v7.widget.RecyclerView
@@ -22,6 +29,27 @@
         android:id="@+id/recycler_pedido"
         android:layout_marginTop="8dp"/>
     </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_recycler_pedido"
+        android:id="@+id/boton_regresar"
+        android:onClick="jumpToPage"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="8dp"
+        android:text="modificar"
+        tools:ignore="OnClick" />
+    <Button
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/boton_regresar"
+        android:layout_toRightOf="@+id/boton_regresar"
+        android:layout_below="@+id/layout_recycler_pedido"
+        android:onClick="irPantallaPedido"
+        android:text="enviar"/>
 
 
 </RelativeLayout>

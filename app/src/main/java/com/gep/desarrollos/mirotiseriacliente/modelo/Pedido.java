@@ -16,12 +16,16 @@ public class Pedido {
     private Map  platos;
     private int precioTotal;
     private int idPedido;
+    private String demora="-1";
     private String hora, fecha;
-
 
 
     public static Pedido getPedido(){
         return pedido;
+    }
+
+    public String getDemora() {
+        return demora;
     }
 
     public String getCliente() {

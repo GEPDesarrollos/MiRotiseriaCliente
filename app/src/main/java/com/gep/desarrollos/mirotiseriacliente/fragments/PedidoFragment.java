@@ -30,11 +30,11 @@ public class PedidoFragment extends Fragment implements IVistaCliente {
 
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
-    private Pedido pedido;
     private AdaptadorRecyclerPedido mAdapter;
     private PlatoPedido[] arrayPlatosPedidos;
     private IModeloCliente iModelo;
     private Context context;
+
 
 
     public PedidoFragment() {
@@ -66,7 +66,7 @@ public class PedidoFragment extends Fragment implements IVistaCliente {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
         mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_pedido);
-//        mRecyclerView.setHasFixedSize(true);
+
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -98,17 +98,9 @@ public class PedidoFragment extends Fragment implements IVistaCliente {
         } catch (ExcepcionRotiseria excepcionRotiseria) {
             excepcionRotiseria.printStackTrace();
         }
-        int i=0;
-        for (PlatoPedido pP:arrayPlatosPedidos){
-
-
-            Log.d("arrayPedidosPlatos",pP.toString()+" "+i++);
-
-        }
 
         mAdapter = new AdaptadorRecyclerPedido(arrayPlatosPedidos);
         mRecyclerView.setAdapter(mAdapter);
-
         mAdapter.notifyDataSetChanged();
 
     }
@@ -140,11 +132,5 @@ public class PedidoFragment extends Fragment implements IVistaCliente {
     public void manejadorDeCambioModeloCliente(Pedido pedido) throws ExcepcionRotiseria {
 
     }
-
-
-
-//        public static RecyclerView.Adapter getmAdapter() {
-//            return mAdapter;
-//        }
 
     }
