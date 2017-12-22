@@ -10,10 +10,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.gep.desarrollos.mirotiseriacliente.MiRotiseriaCliente;
 import com.gep.desarrollos.mirotiseriacliente.R;
+import com.gep.desarrollos.mirotiseriacliente.Timer;
+import com.gep.desarrollos.mirotiseriacliente.activities.PantallaPedidoConfirmado;
+import com.gep.desarrollos.mirotiseriacliente.modelo.ExcepcionRotiseria;
+import com.gep.desarrollos.mirotiseriacliente.modelo.IModeloCliente;
 import com.gep.desarrollos.mirotiseriacliente.modelo.Rotiseria;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +35,8 @@ public class PedidoConfirmadoFragment extends Fragment {
     private TextView contenido;
     private FirebaseUser usuario;
     private String demora;
+    private IModeloCliente modelo;
+    private Button botonTirmer;
 
 
     public PedidoConfirmadoFragment() {
@@ -43,21 +50,12 @@ public class PedidoConfirmadoFragment extends Fragment {
 
         demora=((MiRotiseriaCliente)getActivity().getApplication()).getDemora();
 
-       /* SharedPreferences preferences=getContext().getSharedPreferences("preferencias",Context.MODE_PRIVATE);
-        demora = preferences.getString("demora","No");
-*/
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_pedido_confirmado,container,false);
-
-
-
-
-//        demora = getArguments().getString("demora");
-//        Log.d("FragmentPedConfirmado",demora);
 
 
         titulo=(TextView)view.findViewById(R.id.titulo_pedido_confirmado);
@@ -69,7 +67,16 @@ public class PedidoConfirmadoFragment extends Fragment {
 
         contenido.setText("Su pedido estará listo en "+demora+" minutos. Muchas Gracias!");
 
+        botonTirmer=(Button)view.findViewById(R.id.boto_timer);
+        botonTirmer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+        ((MiRotiseriaCliente)getActivity().getApplication()).setTimer();
+
+
+            }
+        });
 
         return view;
     }

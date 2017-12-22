@@ -40,6 +40,7 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
     private IModeloCliente modeloCliente;
     private static PedidoFragment pedidoFragment;
     private ImageButton botonPedido;
+    private static PantallaPrincipalActivity pantallaPrincipalActivity;
 
 
 
@@ -50,6 +51,9 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_principal);
 
 //        inicializar el token de la rotiseria
+
+
+
         Rotiseria.leerTokenRotiseria();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,6 +66,9 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -178,32 +185,6 @@ public class PantallaPrincipalActivity extends AppCompatActivity {
         }
 
 
-
-//        public static class PlaceholderFragment extends Fragment {
-//
-//            private static final String ARG_SECTION_NUMBER = "section_number";
-//
-//            public PlaceholderFragment() {
-//            }
-//
-//            public static PlaceholderFragment newInstance(int sectionNumber) {
-//                PlaceholderFragment fragment = new PlaceholderFragment();
-//                Bundle args = new Bundle();
-//                args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-//                fragment.setArguments(args);
-//                return fragment;
-//            }
-//
-//            @Override
-//            public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                                     Bundle savedInstanceState) {
-//                View rootView = inflater.inflate(R.layout.fragment_pantalla_principal, container, false);
-//                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-//                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-//                return rootView;
-//            }
-//
-//        }
     }
 
 

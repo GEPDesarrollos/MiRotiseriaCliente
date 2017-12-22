@@ -1,6 +1,8 @@
 package com.gep.desarrollos.mirotiseriacliente;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
@@ -13,6 +15,8 @@ import com.facebook.appevents.AppEventsLogger;
 
 public class MiRotiseriaCliente extends Application{
     private SharedPreferences preferences;
+    private Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -36,4 +40,10 @@ public class MiRotiseriaCliente extends Application{
         editor.commit();
 
     }
+
+    public void setTimer(){
+
+        startService(new Intent(getApplicationContext(),Timer.class));
+    }
+
 }

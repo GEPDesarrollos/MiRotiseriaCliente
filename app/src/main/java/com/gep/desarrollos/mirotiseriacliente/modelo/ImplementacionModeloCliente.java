@@ -1,6 +1,12 @@
         package com.gep.desarrollos.mirotiseriacliente.modelo;
 
+        import android.content.ComponentName;
+        import android.content.Context;
+        import android.content.Intent;
         import android.util.Log;
+
+        import com.gep.desarrollos.mirotiseriacliente.MiRotiseriaCliente;
+        import com.gep.desarrollos.mirotiseriacliente.Timer;
         import com.gep.desarrollos.mirotiseriacliente.fragments.*;
         import com.gep.desarrollos.mirotiseriacliente.IVistaCliente;
         import com.gep.desarrollos.mirotiseriacliente.MyFirebaseInstanceIDService;
@@ -28,7 +34,8 @@
             private Pedido pedido=Pedido.getPedido();
             private static Set<PlatoPedido> hashSetPlatoPedido =new HashSet<>();
             private PedidoFragment pedidoFragment=new PedidoFragment();
-
+            private Timer timer;
+            private MiRotiseriaCliente miRotiseriaCliente;
 
 
             public  PlatoPedido[] getHashSetPlatoPedido() {
@@ -200,6 +207,8 @@
 
             @Override
             public void comienzaTimer(int tiempo) throws ExcepcionRotiseria {
+
+
 
             }
 

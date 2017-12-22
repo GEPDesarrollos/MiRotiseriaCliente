@@ -55,7 +55,7 @@ public interface IModeloCliente {
     /**
      *  metodo para obtener un array de platosPedidos
      */
-    public PlatoPedido[] getHashSetPlatoPedido();
+     PlatoPedido[] getHashSetPlatoPedido();
 
     /**
      * metodo que obtiene el precio total del pedido. Barra de Pedido. Pantalla1

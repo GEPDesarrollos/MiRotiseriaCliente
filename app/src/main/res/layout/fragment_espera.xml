@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:id="@+id/fragmento_espera"
+    android:background="@drawable/fondo"
+
     android:layout_height="match_parent">
 
     <TextView
@@ -9,6 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="28dp"
+        android:textColor="#ffffff"
+        android:background="#80000000"
         android:text="Hola! Guillermo Penedo"
         android:textAppearance="@android:style/TextAppearance.Holo.Large" />
 
@@ -16,6 +20,8 @@
         android:id="@+id/texto_espera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:background="#80000000"
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
         android:text="Su pedido está siendo procesado..."

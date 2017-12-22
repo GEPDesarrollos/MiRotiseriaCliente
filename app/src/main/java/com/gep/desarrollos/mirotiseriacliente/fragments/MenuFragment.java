@@ -2,6 +2,8 @@ package com.gep.desarrollos.mirotiseriacliente.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -33,7 +35,7 @@ public class MenuFragment extends Fragment implements IVistaCliente {
     private IModeloCliente modeloCliente;
     private IControladorCliente controladorCliente;
     private ImageButton botonPedido;
-    private TextView textViewTotal;
+//    private TextView textViewTotal;
 
     public MenuFragment() {
 
@@ -72,8 +74,15 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
         mAdapter = new AdaptadorMenu(platos,modeloCliente);
         mRecyclerView.setAdapter(mAdapter);
+//        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
+        /*fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
 
-        textViewTotal=(TextView)view.findViewById(R.id.precio_total);
 
         return view;
     }
@@ -93,12 +102,12 @@ public class MenuFragment extends Fragment implements IVistaCliente {
 
     @Override
     public void refrescar() {
-        try {
+       /* try {
             textViewTotal.setText("$ "+modeloCliente.getPedido().getPrecioTotal());
         } catch (ExcepcionRotiseria excepcionRotiseria) {
             excepcionRotiseria.printStackTrace();
         }
-
+*/
     }
 
     @Override

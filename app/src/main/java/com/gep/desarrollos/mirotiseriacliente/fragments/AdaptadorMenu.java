@@ -69,7 +69,7 @@ import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
             }
 
             holder.descripcion.setText(platos[position].getDescripcion());
-            holder.precio.setText("$ "+platos[position].getPrecioPlato());
+//            holder.precio.setText("$ "+platos[position].getPrecioPlato());
             //botones
             holder.setOnClickListeners(iModeloCliente,holder.getAdapterPosition());
 
@@ -100,7 +100,7 @@ import com.gep.desarrollos.mirotiseriacliente.modelo.Plato;
                 nombre = (TextView) itemView.findViewById(R.id.nombre_plato);
                 cantidad = (TextView) itemView.findViewById(R.id.cantidad_plato);
                 descripcion = (TextView) itemView.findViewById(R.id.descripcion_plato);
-                precio = (TextView) itemView.findViewById(R.id.precio_plato);
+//                precio = (TextView) itemView.findViewById(R.id.precio_plato);
                 btMas = (Button) itemView.findViewById(R.id.mas);
                 btMenos = (Button) itemView.findViewById(R.id.menos);
 

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pedido_fragment"
     android:tag="fragment_pedido"
+    android:background="@drawable/fondo"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     tools:context="com.gep.desarrollos.mirotiseriacliente.fragments.PedidoFragment">
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:text="Pedido"
+        android:textColor="#DADCDD"
         android:id="@+id/text_pedido"/>
 
     <LinearLayout
